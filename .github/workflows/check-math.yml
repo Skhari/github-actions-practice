@@ -1,0 +1,19 @@
+name: Check My Math
+
+on: [push]
+
+jobs:
+  run-math-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Download my code
+        uses: actions/checkout@v4
+
+      - name: ⚙️ Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 🚀 Run the test script
+        run: node test.js
